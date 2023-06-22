@@ -13,10 +13,10 @@ function writePassword() {
 }
 
 function getPasswordCriteria() {
-  var includeSpecialCharacters = prompt('Would you like to include special characters?');
-  var includeNumbers = prompt('Would you like to include numbers?');
-  var includeLowerCase = prompt('Would you like to include lowercase letters?');
-  var includeUpperCase = prompt('Would you like to include uppercase letters?');
+  var includeSpecialCharacters = window.confirm('Would you like to include special characters?');
+  var includeNumbers = window.confirm('Would you like to include numbers?');
+  var includeLowerCase = window.confirm('Would you like to include lowercase letters?');
+  var includeUpperCase = window.confirm('Would you like to include uppercase letters?');
   var length = parseInt(prompt('password length must be between 8 and 128 characters'));
 
   if (length < 8 || length > 128) {
@@ -25,10 +25,10 @@ function getPasswordCriteria() {
   }
 
   var passwordCriteria = {
-    includeSpecialCharacters: includeSpecialCharacters === 'yes',
-    includeNumbers: includeNumbers === 'yes',
-    includeLowerCase: includeLowerCase === 'yes',
-    includeUpperCase: includeUpperCase === 'yes',
+    includeSpecialCharacters: includeSpecialCharacters,
+    includeNumbers: includeNumbers,
+    includeLowerCase: includeLowerCase,
+    includeUpperCase: includeUpperCase,
     length: Math.max(8, Math.min(128, length)),
   };
 
