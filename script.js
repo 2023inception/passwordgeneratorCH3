@@ -59,7 +59,7 @@ function generatePassword(criteria) {
   }
 
   var password = '';
-  var length = 10;
+  var length = criteria.length;
 
   for (var i = 0; i < length; i++) {
     var randomIndex = Math.floor(Math.random() * characters.length);
